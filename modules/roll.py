@@ -9,13 +9,14 @@ TODO:
 """
 
 from random import randint
-
+from colors import *
 
 def roll_dice(dice = 1, sides = 20):
 	try: return [randint(1, sides) for i in range(dice)]
 	except: return []
 
 def roll(jenni, input):
+
 
 	roll_string = input.group(2)
 
@@ -83,6 +84,8 @@ def roll(jenni, input):
 		operator = ""	
 
 		result_list = roll_dice( int(dice), int(sides) )
+	
+
 		result = sum(result_list)
 		result_r = result
 		mod_string = ""
@@ -109,7 +112,7 @@ def roll(jenni, input):
 					operator = ""
 
 		roll_string_r = str(dice)+"d"+str(sides)+str(mod_string) 	
-		jenni.reply("Rolled: "+roll_string_r+" - "+str(result_list)+"="+str(result_r)+" "+str(mod_string)+" == "+str(int(result)))
+		jenni.say(irc_colors.GREEN+input.nick+irc_colors.NORMAL+" rolled: "+roll_string_r+" ["+str(result_r)+""+str(mod_string)+"] = "+irc_colors.GREEN+str(int(result)))
 
 			
 roll.commands = ['roll']

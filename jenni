@@ -20,6 +20,7 @@ from textwrap import dedent as trim
 dotdir = os.path.expanduser('~/.jenni')
 configpath = os.path.expanduser(dotdir + '/default.py')
 
+
 def check_python_version():
     if sys.version_info < (2, 4):
         error = 'Error: Requires Python 2.4 or later, from www.python.org'

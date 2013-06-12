@@ -1,0 +1,21 @@
+class irc_colors:
+    NORMAL = u"\u000f" # use this to reverse colors/format
+    BOLD = u"\u0002"
+    UNDERLINE = u"\u001f"
+    REVERSE = u"\u0016" # may be italics in some clients
+    WHITE = u"\u000300"
+    BLACK = u"\u000301"
+    DARK_BLUE = u"\u000302"
+    DARK_GREEN = u"\u000303"
+    RED = u"\u000304"
+    BROWN = u"\u000305"
+    PURPLE = u"\u000306"
+    OLIVE = u"\u000307"
+    YELLOW = u"\u000308"
+    GREEN = u"\u000309"
+    TEAL = u"\u000310"
+    CYAN = u"\u000311"
+    BLUE = u"\u000312"
+    MAGENTA = u"\u000313"
+    DARK_GRAY = u"\u000314"
+    LIGHT_GRAY = u"\u000315"
