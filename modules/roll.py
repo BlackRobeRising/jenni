@@ -84,7 +84,17 @@ def roll(jenni, input):
 		operator = ""	
 
 		result_list = roll_dice( int(dice), int(sides) )
-	
+
+		dice_string = ""
+		for die in result_list:
+			if(die == 1):
+				dice_string = dice_string+irc_colors.RED+str(die)+irc_colors.NORMAL+","
+			elif(die == int(sides) ):
+				dice_string = dice_string+irc_colors.GREEN+str(die)+irc_colors.NORMAL+","
+			else:
+				dice_string = dice_string+str(die)+","
+
+		dice_string = dice_string[:-1]
 
 		result = sum(result_list)
 		result_r = result
@@ -112,7 +122,8 @@ def roll(jenni, input):
 					operator = ""
 
 		roll_string_r = str(dice)+"d"+str(sides)+str(mod_string) 	
-		jenni.say(irc_colors.GREEN+input.nick+irc_colors.NORMAL+" rolled: "+roll_string_r+" ["+str(result_r)+""+str(mod_string)+"] = "+irc_colors.GREEN+str(int(result)))
+
+		jenni.say( irc_colors.GREEN+input.nick+irc_colors.NORMAL+" rolled: "+str(roll_string_r)+" = "+irc_colors.GREEN+str(int(result)) +irc_colors.NORMAL+" | "+" ["+str(dice_string)+"] = "+str(result_r)+""+str(mod_string) )
 
 			
 roll.commands = ['roll']
