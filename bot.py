@@ -206,6 +206,8 @@ class Jenni(irc.Bot):
                             if re_host.findall(origin.host):
                                 s.admin = True
                 s.owner = origin.nick + '@' + origin.host == self.config.owner
+		print "owner:"+origin.nick + '@' + origin.host+"=="+self.config.owner+"=="+str(s.owner)
+		
                 if s.owner == False: s.owner = origin.nick == self.config.owner
                 s.host = origin.host
                 return s

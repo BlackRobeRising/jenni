@@ -254,7 +254,7 @@ class Bot(asynchat.async_chat):
                     break
             else: report.append('source unknown')
 
-            self.msg(origin.sender, report[0] + ' (' + report[1] + ')')
+            #self.msg(origin.sender, report[0] + ' (' + report[1] + ')') # removed to prevent posting of error messages to chat.
         except: self.msg(origin.sender, "Got an error.")
 
 class TestBot(Bot):
