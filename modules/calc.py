@@ -17,7 +17,7 @@ from socket import timeout
 import string
 from modules import unicode as uc
 import web
-
+import json
 
 def c(jenni, input):
     """.c -- Google calculator."""

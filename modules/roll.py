@@ -126,5 +126,5 @@ def roll(jenni, input):
 		jenni.say( irc_colors.GREEN+input.nick+irc_colors.NORMAL+" rolled: "+str(roll_string_r)+" = "+irc_colors.GREEN+str(int(result)) +irc_colors.NORMAL+" | "+" ["+str(dice_string)+"] = "+str(result_r)+""+str(mod_string) )
 
 			
-roll.commands = ['roll']
+roll.commands = ['redacted']
 roll.priority = 'medium'
