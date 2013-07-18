@@ -255,7 +255,7 @@ class Jenni(irc.Bot):
     def dispatch(self, origin, args):
         bytes, event, args = args[0], args[1], args[2:]
         text = decode(bytes)
-
+	text = text.strip()
         for priority in ('high', 'medium', 'low'):
             items = self.commands[priority].items()
             for regexp, funcs in items:
