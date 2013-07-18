@@ -18,7 +18,7 @@ import string
 import web
 import json
 import urllib2
-from colors import *
+import imp
 
 def perform_throw(uri, roll_string, jenni):
         q = roll_string.encode('utf-8')
@@ -31,12 +31,19 @@ def perform_throw(uri, roll_string, jenni):
 
 
 def throw(jenni, input):
+	c = imp.load_source('colors', './modules/colors.py')
+	irc_colors = c.irc_colors()
 
 	roll_string = input.group(2)
 
 	if not input.group(2):
         	return jenni.reply('Nothing to calculate.')
-	jenni.say(irc_colors.GREEN+input.nick+irc_colors.NORMAL+' : ' + perform_throw("http://dev.local/unstable/dice/roll/request.json?format=irc&dice_string=", input.group(2), jenni ))
-			
+	uri = "http://10.1.1.2/unstable/dice/roll/request.json?format=irc&dice_string="
+	#uri = "http://dev.local/unstable/dice/roll/request.json?format=irc&dice_string=" #outside VM
+
+#	jenni.say(uri + roll_string)
+
+	jenni.say(irc_colors.GREEN+input.nick+irc_colors.NORMAL+' : ' + perform_throw(uri, input.group(2), jenni ))
+	
 throw.commands = ['throw', 'roll', 'r']
 throw.priority = 'medium'
